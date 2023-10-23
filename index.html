@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Website</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Box Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="img/coffeeFavicon.png" />
+  </head>
+  <body>
+    <box-icon type="solid" name="coffee"></box-icon>
+    <!-- Navbar -->
+    <header>
+      <a href="#" class="logo" title="Logo">
+        <img src="img/icon.png" alt="" />
+      </a>
+      <!-- Menu-Icon -->
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <!-- Links -->
+      <ul class="navbar">
+        <li><a href="#home" title="Home">Home</a></li>
+        <li><a href="#about" title="About">About Us</a></li>
+        <li><a href="#products" title="Products">Products</a></li>
+        <li><a href="#customers" title="Customers">Customers</a></li>
+      </ul>
+      <!-- Icon -->
+      <div class="header-icon">
+        <i class="bx bx-cart-alt" id="cart-icon" title="Cart"> </i>
+        <!-- <i class="bx bx-search" id="search-icon"></i> -->
+      </div>
+      <!-- Search Box -->
+      <!-- <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here..." />
+      </div> -->
+
+      <!-- Shopping Cart -->
+      <div class="shopping-cart" id="shopping-cart">
+        <div class="shopping-cart-header">
+          <i class="bx bx-x-circle" id="close-cart" title="Close"></i>
+          <h2>Shopping Cart</h2>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast-notification" class="hidden">Item added to cart!</div>
+
+        <div id="cart-items"></div>
+        <div class="total-container">
+          <a class="total" id="total">Total:</a>
+        </div>
+        <div class="buy-now" id="buy-now">
+          <a class="btn" id="cart-button" title="Buy Now" onclick="purchase()"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Home -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          Start your day <br />
+          with coffee
+        </h1>
+        <p>
+          Discover a wide selection of premium coffee beans sourced from the
+          world's most renowned coffee-growing regions. Whether you prefer a
+          velvety espresso, a bold dark roast, or a smooth and mellow brew,
+          we've got the perfect coffee waiting just for you.
+        </p>
+        <a href="#products" class="btn" title="Shop Now">Shop Now</a>
+      </div>
+      <div class="home-img">
+        <img src="img/coffeeCupMain.png" alt="" />
+      </div>
+    </section>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="img/coffeeAbout.png" alt="" />
+      </div>
+      <div class="about-text">
+        <h2>Our History</h2>
+        <p>
+          "Our eCommerce coffee shop traces its origins to a shared love for
+          coffee and a dream to bring exceptional brews to your home. From a
+          small family venture, we've grown into a global platform, sourcing and
+          delivering the finest coffee beans and blends. Our mission is simple:
+          to share our passion for coffee, one cup at a time."
+        </p>
+      </div>
+    </section>
+    <!-- Products -->
+    <section class="products" id="products">
+      <div class="section-heading">
+        <h2>Our popular products</h2>
+      </div>
+      <!-- Container -->
+      <div class="products-container">
+        <div class="box">
+          <img src="img/arabica.png" alt="" />
+          <h3>Arabica Coffee Beans</h3>
+          <div class="content">
+            <span>$10</span>
+            <div class="add-to-cart">
+              <a
+                title="Add to cart"
+                onclick="addProductToCart('Arabica Coffee Beans', '10', 'img/arabica.png')"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="img/colombianCoffee.png" alt="" />
+          <h3>100% Colombian Coffee</h3>
+          <div class="content">
+            <span>$15</span>
+            <div class="add-to-cart">
+              <a
+                title="Add to cart"
+                onclick="addProductToCart('100% Colombian Coffee', '15', 'img/colombianCoffee.png')"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="img/patchRoast.png" alt="" />
+          <h3>Patch Roast</h3>
+          <div class="content">
+            <span>$5</span>
+            <div class="add-to-cart">
+              <a
+                title="Add to cart"
+                onclick="addProductToCart('Patch Roast', '5', 'img/patchRoast.png')"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="img/homeBlend.png" alt="" />
+          <h3>Home Blend</h3>
+          <div class="content">
+            <span>$8</span>
+            <div class="add-to-cart">
+              <a
+                title="Add to cart"
+                onclick="addProductToCart('Home Blend', '8', 'img/homeBlend.png')"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="img/organicFairtrade.png" alt="" />
+          <h3>Organic Fairtrade</h3>
+          <div class="content">
+            <span>$12</span>
+            <div class="add-to-cart">
+              <a
+                title="Add to cart"
+                onclick="addProductToCart('Organic Fairtrade', '12', 'img/organicFairtrade.png')"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="img/smoothItallianBlend.png" alt="" />
+          <h3>Smooth Italian Blend</h3>
+          <div class="content">
+            <span>$15</span>
+            <div class="add-to-cart">
+              <a
+                title="Add to cart"
+                onclick="addProductToCart('Smooth Italian Blend', '15', 'img/smoothItallianBlend.png')"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Customers -->
+    <section class="customers" id="customers">
+      <div class="section-heading">
+        <h2>Our customer's</h2>
+      </div>
+      <!-- Container -->
+      <div class="customers-container">
+        <div class="box">
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            I recently purchased the "Arabica Coffee Beans" from this store, and
+            it's nothing short of heavenly. The flavors are exquisite and take
+            me on a journey with each sip. It's a morning ritual I genuinely
+            look forward to! I would purchase again and highly recomend to my
+            friends.
+          </p>
+          <h2>Tammy</h2>
+          <img src="img/headShot1.png" alt="" />
+        </div>
+        <div class="box">
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            The "100% Colombian Coffee" I purchased from this coffee shop is a
+            hidden gem. The moment I opened the bag, the fragrance was
+            captivating. It brews into a flavorful cup of coffee that instantly
+            brightens my day. This coffee is a must-try for any coffee lover!
+          </p>
+          <h2>Josh</h2>
+          <img src="img/headShot2.png" alt="" />
+        </div>
+        <div class="box">
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+          </div>
+          <p>
+            I can't get enough of the "Smooth Italian Blend" coffee from this
+            store. It's like a warm hug in a mug. The deep hints of chocolate
+            make every sip a delightful experience. This coffee is now a staple
+            in my morning routine, and I couldn't be happier with my choice.
+          </p>
+          <h2>Sarah</h2>
+          <img src="img/headShot3.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="footer-box">
+        <h2>Coffee Shop</h2>
+        <p>Connect with us on our socials!</p>
+        <div class="social">
+          <a href="https://www.facebook.com/"
+            ><i class="bx bxl-facebook" title="Facebook"></i
+          ></a>
+          <a href="https://twitter.com/?lang=en"
+            ><i class="bx bxl-twitter" title="Twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/"
+            ><i class="bx bxl-instagram" title="Instagram"></i
+          ></a>
+          <a href="https://www.tiktok.com/en/"
+            ><i class="bx bxl-tiktok" title="Tiktok"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <div class="contact">
+          <span
+            ><i class="bx bxs-map"></i>450 New St. Philadelphia, PA 19121</span
+          >
+          <span><i class="bx bxs-phone"></i>+1 234 567 8901</span>
+          <span><i class="bx bxs-envelope"></i>coffee@shop.com</span>
+        </div>
+      </div>
+    </section>
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>&#169; 2023 Brooke Focht All Rights Reserved</p>
+    </div>
+
+    <!-- Link To JS -->
+    <script src="main.js"></script>
+  </body>
+</html>
